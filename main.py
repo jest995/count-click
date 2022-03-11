@@ -39,15 +39,9 @@ def is_bitlink(link, headers=HEADERS):
     return response.ok
 
 
-def createParser():
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('link', nargs='?')
-
-    return parser
-
-
-def main():
-    parser = createParser()
     namespace = parser.parse_args()
     if namespace.link:
         user_input = namespace.link
