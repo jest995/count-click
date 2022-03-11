@@ -7,9 +7,6 @@ import requests
 from dotenv import load_dotenv
 
 
-
-load_dotenv()
-
 TOKEN = os.environ['BITLY_TOKEN']
 HEADERS = {
         "Authorization": f"Bearer {TOKEN}"
@@ -47,7 +44,7 @@ def createParser():
     parser.add_argument('link', nargs='?')
 
     return parser
-    
+
 
 def main():
     parser = createParser()
@@ -56,7 +53,7 @@ def main():
         user_input = namespace.link
     else:
         user_input = input("Введите ссылку:\n")
-    
+
     parse_link = urlsplit(user_input)
     user_link = parse_link.netloc + parse_link.path
 
@@ -76,4 +73,5 @@ def main():
             print('Битлинк', bitlink)
 
 if __name__ == "__main__":
+    load_dotenv()
     main()
