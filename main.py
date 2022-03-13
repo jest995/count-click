@@ -1,6 +1,5 @@
 import argparse
 import os
-import sys
 from urllib.parse import urlsplit
 
 import requests
