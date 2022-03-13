@@ -38,7 +38,6 @@ def is_bitlink(link, headers=HEADERS):
     return response.ok
 
 
-def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('link', nargs='?')
     namespace = parser.parse_args()
@@ -65,6 +64,3 @@ def main():
         else:
             print('Битлинк', bitlink)
 
-if __name__ == "__main__":
-    load_dotenv()
-    main()
